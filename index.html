@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+<body text=#00CCCC>
+
+  <head>
+    <title>BOCE Bot</title>
+    <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #00000099;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: crimson;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: white;
+      }
+
+      input[type=submit],
+      input[type=button] {
+        background-color: #00CCCC;
+        /* // color: white; */
+        margin: 2px 4px 2px 4px;
+        border: 1px solid #00CCCC;
+        border-radius: 3px;
+        padding: 2px 5px;
+        margin-left: 5px;
+        color: black;
+        width: 200px;
+      }
+
+      input[type=submit]:hover,
+      /* input[type=button]:hover, */
+      input[type=submit]:active,
+      input[type=button]:active {
+        border: 1px solid crimson;
+        background-color: crimson;
+        color: white;
+        font-weight: bolder;
+      }
+
+      input[type=text],
+      input[type=password] {
+        border: #00CCCC 1px inset;
+        border-radius: 3px;
+        padding: 2px 5px;
+        background-color: #00000040;
+        color: #00CCCC;
+        width: 95%;
+      }
+
+      body,
+      html {
+        overflow-x: hidden;
+        overflow-y: auto;
+        font-family: 'courier new';
+        font-size: 14px;
+        margin: 5px;
+        /* // height:100%; */
+        min-width: 600px;
+        /* // max-width: 600px; */
+      }
+
+      #container {
+        padding: 10px;
+        /* // position: fixed;
+    // margin: 0;
+    // left:0;
+    // right:0; */
+        display: inline-block;
+        /* // border: 1px solid lime; */
+        overflow-y: auto;
+        /* // display:flex;
+    // margin:0;
+    // display: inline-block; */
+      }
+
+      #container div {
+        /* // min-height: 150px;
+   // padding: 10px; */
+      }
+
+      div#left {
+        /* // border-bottom: 3px inset crimson; */
+        display: inline-block;
+        /* // float:left; 
+    // margin-right:10px;
+    // width:140px; */
+        min-width: 500px;
+        /* // max-width: 750px; */
+        /* // border-right:2px solid #000; */
+      }
+
+      div#right {
+        /* // border-bottom: 3px inset crimson; */
+        display: inline-block;
+        overflow: hidden;
+        /* // margin:10px; */
+        /* // border:2px dashed #ccc; */
+        min-height: 350px;
+        width: 500px;
+        /* // min-width: 150px; */
+        /* // max-width: 750px; */
+        margin: 0;
+      }
+
+      div.ures {
+        /* // display:inline-block; */
+        background-color: #00000078;
+        font-size: 13px;
+        min-width: 400px;
+        max-width: 560px;
+        padding: 10px;
+        border: 1px;
+        min-height: 620px;
+        max-height: 620px;
+        overflow-y: auto;
+        border-style: solid;
+        border-color: transparent;
+        margin-bottom: 10px;
+      }
+      div.ures2 {
+        /* // display:inline-block; */
+        background-color: #00000078;
+        font-size: 13px;
+        min-width: 400px;
+        max-width: 450px;
+        padding: 10px;
+        border: 1px;
+        min-height: 620px;
+        max-height: 620px;
+        overflow-y: auto;
+        border-style: solid;
+        border-color: transparent;
+        margin-bottom: 10px;
+      }
+
+      div.logs {
+        /* // border: 1px solid lime;
+    // display: inline-block;
+    // display:block; */
+        background-color: #00000078;
+        font-size: 13px;
+        min-width: 750px;
+        max-width: 750px;
+        padding: 10px;
+        border: 1px;
+        min-height: 80px;
+        max-height: 80px;
+        overflow-y: auto;
+        border-style: solid;
+        border-color: transparent;
+        /* // margin: 25px; */
+        margin-bottom: 10px;
+      }
+
+      body {
+        /* // margin-top:5px; */
+        background: url('http://enjoycss.com/webshots/hy_1.png');
+        padding: 10px 10px 10px 10px;
+        /* // max-height:95%;
+    // border:14px solid red;
+    // overflow:hidden; */
+      }
+
+      .inner {
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* // border: 2px solid lime; */
+      }
+
+      .bots_li {
+        padding: 1px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        background: #00000040;
+        min-height: 430px;
+        max-height: 430px;
+      }
+
+      table {
+        border-collapse: collapse;
+        /* // border: 1px inset grey; */
+      }
+
+      .globl {
+        padding-left: 5px;
+      }
+
+      .globr {
+        padding-right: 5px;
+      }
+
+      tr,
+      td {
+        /* // border: 1px solid white; */
+      }
+
+      td {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 1200px) {
+        #left {
+          float: none;
+          margin-right: 0;
+          width: auto;
+          border: 0;
+          /* // border-bottom:2px solid red;     */
+        }
+
+        #right {
+           max-width: 750px; 
+    /* // min-width: 750px; */ 
+        }
+
+        div.ures {
+          min-width: 750px;
+          min-height: 150px;
+          max-height: 150px;
+        }
+        
+
+        div.logs {
+          min-height: 150px;
+          max-height: 150px;
+        }
+
+        html,
+        body {
+          overflow: hidden;
+          overflow-y: scroll;
+        }
+
+        td {
+          display: block;
+          min-width: 750px;
+        }
+      }
+    </style>
+
+  </head>
+
+  <div id='container'>
+    <div id='left'>
+      <div class='logs' style='min-height:500px; max-height:600px;'>
+        <div class='inner'>
+          <font size=5><b>BOCE BOT</b></font><br>
+          <table>
+            <tr>
+             
+              <td class='globl'>
+                <input type="button" id="runhijack" value="Run Hijack Test">
+                <input type="button" id="runhttp" value="Run Speed Test">
+                <input type="button" style="background-color: crimson;color: white;border: black;" id="stop" value="STOP">
+              </td>
+               <!-- <td class='globr'>
+                <input type="button" style=" background-color:crimson;color: white;border: black;" id="clear" value="Clear Logs">
+
+              </td> -->
+          </table>
+          <hr>
+        </div>
+        <div class='inner bots_li' id="bots_li">
+          <div class='bots_on' id="logs">
+
+
+
+          </div>
+        </div>
+      </div>
+      <div id='ylop' class='logs'>
+        <div id='netlogs'>
+          <!-- <b>Settings</b><br>
+          <form action="/download" method="post">
+            <button type="submit">Download JavaScript PDF</button>
+        </form>
+        </form>
+          Show Browser: <input type="checkbox" /></br>
+          Use Proxy: <input type="checkbox" /></br>
+          User data: <input type="checkbox" /></br> -->
+        </div>
+      </div>
+    </div>
+    <div id='right'>
+      
+      <div id='botrespx' class='ures'>
+        <b>Hijack</b><hr>
+        <div style="overflow-x: auto; display: block;" id="outer1">
+        <div style="height: 20em;" id="hijack">
+         
+        </div>
+        </div>
+        <hr>
+        <b>Speed Test</b><hr>
+        <div style="overflow-x: auto; display: block;" id="outer2">
+          <div style="height: 20em; " id="speedtest">
+           
+          </div>
+        
+          
+        </div>
+        </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script>
+     const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleDateString("en-US", {
+              month: "2-digit",
+              day: "2-digit",
+              year: "numeric",
+            });
+            const formattedTime = currentDate.toLocaleTimeString("en-US", {
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true,
+            });
+            const logContainer = document.getElementById('logs');
+            const hijack = document.getElementById('hijack');
+            const speedtest = document.getElementById('speedtest');
+            const messageList = document.getElementById('bots_li');
+            const outer1 = document.getElementById('outer1');
+            const outer2 = document.getElementById('outer2');
+    const socket = io();
+    const runhijack = document.getElementById('runhijack');
+    const runspeedtest = document.getElementById('runhttp');
+    const stoptest = document.getElementById('stop');
+
+    // socket.on('fileContent', data => {
+    //   document.getElementById('botresp').textContent = data;
+    // });
+    
+    runhijack.addEventListener('click', () => {
+      stoptest.disabled = false;
+      runspeedtest.style.backgroundColor='grey';
+      runhijack.style.backgroundColor='grey';
+
+      
+      runhijack.disabled = true;
+      runspeedtest.disabled = true;
+      socket.emit('runhijack');
+      logContainer.innerHTML = '';
+      hijack.innerHTML = '';
+      speedtest.innerHTML = '';
+      socket.emit("log", "[" + formattedDate + " " + formattedTime + "] " + '===============================================================');
+
+    socket.emit("log", "[" + formattedDate + " " + formattedTime + "] " + 'Bot has started.....');
+    });
+    runspeedtest.addEventListener('click', () => {
+      stoptest.disabled = false;
+      runhijack.disabled = true;
+      runspeedtest.disabled = true;
+      runspeedtest.style.backgroundColor='grey';
+      runhijack.style.backgroundColor='grey';
+
+      
+      socket.emit('runspeedtest');
+      logContainer.innerHTML = '';
+      hijack.innerHTML = '';
+      speedtest.innerHTML = '';
+      socket.emit("log", "[" + formattedDate + " " + formattedTime + "] " + '===============================================================');
+
+    
+
+    });
+    stoptest.addEventListener('click', () =>{
+      runspeedtest.style.backgroundColor='#00CCCC';
+      runhijack.style.backgroundColor='#00CCCC';
+      stoptest.disabled = true;
+      runhijack.disabled = false;
+      runspeedtest.disabled = false;
+      socket.emit("log", "[" + formattedDate + " " + formattedTime + "] " + 'Bot has started.....');
+      socket.emit('stopCommand');
+      socket.emit("log", "[" + formattedDate + " " + formattedTime + "] " + 'Bot has been stopped by user.');
+    })
+    
+    socket.on('log', (message) => {
+      console.log(`Received log: ${message}`);
+      const htmlToAppend = message + "<br>";
+      logContainer.innerHTML += htmlToAppend;
+      messageList.scrollTop = messageList.scrollHeight;
+
+    });
+    
+    socket.on('loghijack', (message) => {
+      console.log(`Received log: ${message}`);
+      const htmlToAppend = message + "<br>";
+      hijack.innerHTML += htmlToAppend;
+      outer1.scrollTop = outer1.scrollHeight;
+
+    });
+    socket.on('logspeedtest', (message) => {
+      console.log(`Received log: ${message}`);
+      const htmlToAppend = message + "<br>";
+      speedtest.innerHTML += htmlToAppend;
+      outer2.scrollTop = outer2.scrollHeight;
+
+    });
+    
+  </script>
+  <audio id='notif' src='../notif.wav'></audio>
+  <audio id='notif2' src='../notif.mp3'></audio>
+
+</body>
+
+</html>
